@@ -41,7 +41,6 @@
         @keyframes orbit2 { from{transform:rotate(120deg) translateX(90px) rotate(-120deg)} to{transform:rotate(480deg) translateX(90px) rotate(-480deg)} }
         @keyframes orbit3 { from{transform:rotate(240deg) translateX(150px) rotate(-240deg)} to{transform:rotate(600deg) translateX(150px) rotate(-600deg)} }
         @keyframes arrowBounce { 0%,100%{transform:translateY(0);opacity:0.6} 50%{transform:translateY(6px);opacity:1} }
-        @keyframes slideUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
         @keyframes glowPulse { 0%,100%{box-shadow:0 0 15px rgba(255,107,138,0.1),0 0 30px rgba(255,107,138,0.05)} 50%{box-shadow:0 0 25px rgba(255,107,138,0.2),0 0 50px rgba(255,107,138,0.1)} }
 
         .float { animation: float 4s ease-in-out infinite }
@@ -84,7 +83,7 @@
         .project-bg { transition: transform 0.8s cubic-bezier(0.23,1,0.32,1) }
         .project-icon { transition: transform 0.5s cubic-bezier(0.23,1,0.32,1) }
         .project-arrow { transition: all 0.4s cubic-bezier(0.23,1,0.32,1); opacity:0.5 }
-        .project-number { transition: opacity 0.5s }
+        .project-number { transition: opacity 0.5 }
         .project-line { width:0; transition: width 0.8s cubic-bezier(0.23,1,0.32,1) }
 
         .illustration-card { position:relative; border-radius:1rem; overflow:hidden; cursor:pointer; background:#161625 }
@@ -113,7 +112,6 @@
 
         .scroll-arrow { animation: arrowBounce 1.5s ease-in-out infinite }
 
-        /* ── CV Section Styles ── */
         .cv-frame { position:relative; cursor:pointer; transition:all 0.6s cubic-bezier(0.23,1,0.32,1); animation:glowPulse 4s ease-in-out infinite }
         .cv-frame:hover { transform:scale(1.03) translateY(-8px) }
         .cv-frame::before { content:''; position:absolute; inset:-3px; border-radius:1.5rem; background:linear-gradient(135deg,#FF6B8A,#E84D6D,#FF8FA3,#FF6B8A); background-size:300% 300%; animation:shimmer 4s linear infinite; z-index:-1; opacity:0; transition:opacity 0.5s }
@@ -121,7 +119,7 @@
         .cv-frame img { border-radius:1.25rem; transition:all 0.6s cubic-bezier(0.23,1,0.32,1); display:block; width:100%; height:100%; object-fit:cover }
         .cv-frame:hover img { filter:brightness(1.05) }
 
-        .cv-overlay { position:absolute; inset:0; border-radius:1.25rem; background:rgba(12,12,24,0.7); backdrop-filter:blur(2px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap-3; opacity:0; transition:all 0.5s cubic-bezier(0.23,1,0.32,1) }
+        .cv-overlay { position:absolute; inset:0; border-radius:1.25rem; background:rgba(12,12,24,0.7); backdrop-filter:blur(2px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3; opacity:0; transition:all 0.5s cubic-bezier(0.23,1,0.32,1) }
         .cv-frame:hover .cv-overlay { opacity:1 }
 
         .info-card { transition:all 0.4s cubic-bezier(0.23,1,0.32,1); cursor:default }
@@ -133,6 +131,13 @@
 
         .skill-tag-anim { opacity:0; transform:translateY(8px) scale(0.9); transition:all 0.3s cubic-bezier(0.23,1,0.32,1) }
         .skill-tag-anim.show { opacity:1; transform:translateY(0) scale(1) }
+
+        .tool-item { transition:all 0.4s cubic-bezier(0.23,1,0.32,1) }
+        .tool-item:hover { transform:translateY(-6px) }
+        .tool-item:hover .tool-icon-box { border-color:rgba(255,107,138,0.4); background:rgba(255,107,138,0.15); box-shadow:0 0 30px rgba(255,107,138,0.15) }
+        .tool-item:hover .tool-name { color:#FF6B8A }
+        .tool-icon-box { transition:all 0.4s cubic-bezier(0.23,1,0.32,1) }
+        .tool-name { transition:color 0.3s }
 
         @media(max-width:768px) {
             .cursor-dot { display:none }
@@ -172,7 +177,6 @@
                     <a href="#about" class="nav-link text-sm text-gray-400 hover:text-guava-400 transition-colors">About</a>
                     <a href="#skills" class="nav-link text-sm text-gray-400 hover:text-guava-400 transition-colors">Skills</a>
                     <a href="#projects" class="nav-link text-sm text-gray-400 hover:text-guava-400 transition-colors">Projects</a>
-                    <a href="#illustrations" class="nav-link text-sm text-gray-400 hover:text-guava-400 transition-colors">Illustrations</a>
                     <a href="#resume" class="nav-link text-sm text-gray-400 hover:text-guava-400 transition-colors">Resume</a>
                     <a href="#contact" class="px-5 py-2 bg-guava-400 text-dark-500 text-sm font-semibold rounded-full hover:bg-guava-300 transition-all hover:shadow-lg hover:shadow-guava-400/30">Let's Talk</a>
                 </div>
@@ -191,7 +195,6 @@
         <a href="#about" class="mobile-link text-2xl font-display text-white hover:text-guava-400 transition-colors">About</a>
         <a href="#skills" class="mobile-link text-2xl font-display text-white hover:text-guava-400 transition-colors">Skills</a>
         <a href="#projects" class="mobile-link text-2xl font-display text-white hover:text-guava-400 transition-colors">Projects</a>
-        <a href="#illustrations" class="mobile-link text-2xl font-display text-white hover:text-guava-400 transition-colors">Illustrations</a>
         <a href="#resume" class="mobile-link text-2xl font-display text-white hover:text-guava-400 transition-colors">Resume</a>
         <a href="#contact" class="mobile-link text-2xl font-display text-white hover:text-guava-400 transition-colors">Contact</a>
     </div>
@@ -222,7 +225,7 @@
                     <p class="text-gray-400 text-lg md:text-xl max-w-md leading-relaxed mb-4">A creative designer crafting <span class="text-guava-400 font-medium">intuitive experiences</span> through product design, UI/UX, and visual storytelling.</p>
                     <p class="text-gray-500 text-sm max-w-sm mb-10">I'm <span class="text-guava-300">Anvitaa Chopra</span> — multidisciplinary designer turning bold ideas into beautiful, functional realities.</p>
                     <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="view-work-btn inline-flex items-center gap-3 px-8 py-3.5 bg-guava-400 text-dark-500 font-semibold rounded-full hover:bg-guava-300 hover:shadow-xl hover:shadow-guava-400/30 transition-all group" style="position:relative;z-index:10">View My Work <iconify-icon icon="solar:arrow-right-up-linear" width="18" class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></iconify-icon></a>
+                        <a href="#projects" class="inline-flex items-center gap-3 px-8 py-3.5 bg-guava-400 text-dark-500 font-semibold rounded-full hover:bg-guava-300 hover:shadow-xl hover:shadow-guava-400/30 transition-all group" style="position:relative;z-index:10">View My Work <iconify-icon icon="solar:arrow-right-up-linear" width="18" class="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></iconify-icon></a>
                         <a href="#contact" class="inline-flex items-center gap-2 px-8 py-3.5 border border-guava-400/30 text-guava-300 font-semibold rounded-full hover:bg-guava-400/10 transition-all" style="position:relative;z-index:10">Get in Touch</a>
                     </div>
                 </div>
@@ -255,29 +258,19 @@
         <div class="marquee-container"><div class="marquee-content"><span class="inline-flex items-center gap-6 text-sm text-gray-500"><span class="text-guava-400">✦</span> Product Design <span class="text-guava-400">✦</span> UI/UX <span class="text-guava-400">✦</span> Packaging Design <span class="text-guava-400">✦</span> Figma <span class="text-guava-400">✦</span> Brand Identity <span class="text-guava-400">✦</span> Visual Design <span class="text-guava-400">✦</span> Illustration <span class="text-guava-400">✦</span> Creative Direction <span class="text-guava-400">✦</span> Prototyping <span class="text-guava-400">✦</span> Design Systems <span class="text-guava-400">✦</span> Product Design <span class="text-guava-400">✦</span> UI/UX <span class="text-guava-400">✦</span> Packaging Design <span class="text-guava-400">✦</span> Figma <span class="text-guava-400">✦</span> Brand Identity <span class="text-guava-400">✦</span> Visual Design <span class="text-guava-400">✦</span> Illustration</span></div></div>
     </div>
 
-    <!-- ABOUT -->
+    <!-- ABOUT — no image, single column -->
     <section id="about" class="py-24 md:py-32">
-        <div class="max-w-7xl mx-auto px-6 md:px-10">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <div class="inline-flex items-center gap-2 mb-6"><span class="w-8 h-[2px] bg-guava-400"></span><span class="text-xs text-guava-400 uppercase tracking-widest font-semibold">About Me</span></div>
-                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-8 leading-tight">Designing with<br><span class="text-guava-400">purpose & passion</span></h2>
-                    <div class="space-y-5 text-gray-400 leading-relaxed">
-                        <p>I'm <span class="text-white font-medium">Anvitaa Chopra</span> — a multidisciplinary designer with a deep love for crafting meaningful, user-centered experiences. Currently pursuing my studies at <span class="text-guava-300">NIFT</span>, I blend creativity with strategy to bring ideas to life.</p>
-                        <p>From product packaging to digital interfaces, I believe great design lives at the intersection of <span class="text-guava-300">aesthetics and functionality</span>. Every project is an opportunity to tell a story — whether through a minimalist UI, a bold brand identity, or an immersive product experience.</p>
-                        <p>My approach? Research-driven, detail-obsessed, and always human-first. I thrive on solving complex design challenges and turning abstract concepts into tangible, beautiful solutions.</p>
-                    </div>
-                    <div class="grid grid-cols-3 gap-6 mt-10">
-                        <div class="text-center"><div class="text-3xl font-display font-bold text-guava-400 counter" data-target="15">0</div><div class="text-xs text-gray-500 mt-1 uppercase tracking-wider">Projects</div></div>
-                        <div class="text-center"><div class="text-3xl font-display font-bold text-guava-400 counter" data-target="4">0</div><div class="text-xs text-gray-500 mt-1 uppercase tracking-wider">Domains</div></div>
-                        <div class="text-center"><div class="text-3xl font-display font-bold text-guava-400">∞</div><div class="text-xs text-gray-500 mt-1 uppercase tracking-wider">Curiosity</div></div>
-                    </div>
-                </div>
-                <div class="relative">
-                    <div class="relative rounded-3xl overflow-hidden aspect-[4/5]"><img src="https://picsum.photos/seed/designer-portrait-creative/600/750" alt="Portrait" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-dark-500 via-transparent to-transparent"></div></div>
-                    <div class="absolute -bottom-6 -left-6 glass rounded-2xl p-5 float"><div class="flex items-center gap-3"><div class="w-10 h-10 bg-guava-400/20 rounded-xl flex items-center justify-center"><iconify-icon icon="solar:diploma-verified-linear" width="20" class="text-guava-400"></iconify-icon></div><div><div class="text-sm font-semibold text-white">NIFT Student</div><div class="text-xs text-gray-400">Design & Technology</div></div></div></div>
-                    <div class="absolute -top-4 -right-4 w-24 h-24 border-2 border-guava-400/20 rounded-2xl rotate-12"></div>
-                </div>
+        <div class="max-w-3xl mx-auto px-6 md:px-10">
+            <div class="inline-flex items-center gap-2 mb-6"><span class="w-8 h-[2px] bg-guava-400"></span><span class="text-xs text-guava-400 uppercase tracking-widest font-semibold">About Me</span></div>
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-10 leading-tight">Designing with<br><span class="text-guava-400">purpose & passion</span></h2>
+            <div class="space-y-6 text-gray-400 leading-relaxed text-lg">
+                <p>I'm <span class="text-white font-medium">Anvitaa Chopra</span> — a multidisciplinary designer with a deep love for crafting meaningful, user-centered experiences. Currently pursuing my studies at <span class="text-guava-300">NIFT</span>, I blend creativity with strategy to bring ideas to life.</p>
+                <p>From product packaging to digital interfaces, I believe great design lives at the intersection of <span class="text-guava-300">aesthetics and functionality</span>. Every project is an opportunity to tell a story — whether through a minimalist UI, a bold brand identity, or an immersive product experience.</p>
+                <p>My approach? Research-driven, detail-obsessed, and always human-first. I thrive on solving complex design challenges and turning abstract concepts into tangible, beautiful solutions.</p>
+            </div>
+            <div class="mt-10 inline-flex items-center gap-3 glass rounded-2xl px-6 py-4">
+                <div class="w-10 h-10 bg-guava-400/20 rounded-xl flex items-center justify-center"><iconify-icon icon="solar:diploma-verified-linear" width="20" class="text-guava-400"></iconify-icon></div>
+                <div><div class="text-sm font-semibold text-white">NIFT Student</div><div class="text-xs text-gray-400">Design & Technology • 2022–2026</div></div>
             </div>
         </div>
     </section>
@@ -291,11 +284,10 @@
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="glass rounded-2xl p-8 card-hover group relative overflow-hidden"><div class="absolute top-0 right-0 w-32 h-32 bg-guava-400/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div><div class="w-12 h-12 bg-guava-400/15 rounded-xl flex items-center justify-center mb-5"><iconify-icon icon="solar:pallete-2-linear" width="24" class="text-guava-400"></iconify-icon></div><h3 class="font-display text-xl font-semibold mb-4 text-white">Design Tools</h3><div class="flex flex-wrap gap-2"><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Figma</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Canva</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Adobe XD</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Photoshop</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Illustrator</span></div></div>
-                <div class="glass rounded-2xl p-8 card-hover group relative overflow-hidden"><div class="absolute top-0 right-0 w-32 h-32 bg-guava-400/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div><div class="w-12 h-12 bg-guava-400/15 rounded-xl flex items-center justify-center mb-5"><iconify-icon icon="solar:smartphone-2-linear" width="24" class="text-guava-400"></iconify-icon></div><h3 class="font-display text-xl font-semibold mb-4 text-white">UI/UX Design</h3><div class="flex flex-wrap gap-2"><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Wireframing</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Prototyping</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">User Research</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Interaction Design</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Usability Testing</span></div></div>
+                <div class="glass rounded-2xl p-8 card-hover group relative overflow-hidden"><div class="absolute top-0 right-0 w-32 h-32 bg-guava-400/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div><div class="w-12 h-12 bg-guava-400/15 rounded-xl flex items-center justify-center mb-5"><iconify-icon icon="solar:smartphone-2-linear" width="24" class="text-guava-400"></iconify-icon></div><h3 class="font-display text-xl font-semibold mb-4 text-white">UI/UX Design</h3><div class="flex flex-wrap gap-2"><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">User Research</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Wireframing</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Prototyping</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Interaction Design</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Usability Testing</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Visual Design</span></div></div>
                 <div class="glass rounded-2xl p-8 card-hover group relative overflow-hidden"><div class="absolute top-0 right-0 w-32 h-32 bg-guava-400/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div><div class="w-12 h-12 bg-guava-400/15 rounded-xl flex items-center justify-center mb-5"><iconify-icon icon="solar:box-minimalistic-linear" width="24" class="text-guava-400"></iconify-icon></div><h3 class="font-display text-xl font-semibold mb-4 text-white">Product Design</h3><div class="flex flex-wrap gap-2"><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Packaging</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Brand Identity</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">3D Visualization</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Material Study</span></div></div>
                 <div class="glass rounded-2xl p-8 card-hover group relative overflow-hidden"><div class="absolute top-0 right-0 w-32 h-32 bg-guava-400/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div><div class="w-12 h-12 bg-guava-400/15 rounded-xl flex items-center justify-center mb-5"><iconify-icon icon="solar:pen-new-round-linear" width="24" class="text-guava-400"></iconify-icon></div><h3 class="font-display text-xl font-semibold mb-4 text-white">Visual Design</h3><div class="flex flex-wrap gap-2"><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Typography</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Illustration</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Layout Design</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Color Theory</span></div></div>
-                <div class="glass rounded-2xl p-8 card-hover group relative overflow-hidden"><div class="absolute top-0 right-0 w-32 h-32 bg-guava-400/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div><div class="w-12 h-12 bg-guava-400/15 rounded-xl flex items-center justify-center mb-5"><iconify-icon icon="solar:chat-round-dots-linear" width="24" class="text-guava-400"></iconify-icon></div><h3 class="font-display text-xl font-semibold mb-4 text-white">Soft Skills</h3><div class="flex flex-wrap gap-2"><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Creative Thinking</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Communication</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Collaboration</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Problem Solving</span></div></div>
-                <div class="glass rounded-2xl p-8 card-hover group relative overflow-hidden border-guava-400/20"><div class="absolute top-0 right-0 w-32 h-32 bg-guava-400/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div><div class="w-12 h-12 bg-guava-400/15 rounded-xl flex items-center justify-center mb-5"><iconify-icon icon="solar:bolt-circle-linear" width="24" class="text-guava-400"></iconify-icon></div><h3 class="font-display text-xl font-semibold mb-4 text-white">Currently Exploring</h3><div class="flex flex-wrap gap-2"><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Motion Design</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">3D Modeling</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Design Systems</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">AI in Design</span></div></div>
+                <div class="glass rounded-2xl p-8 card-hover group relative overflow-hidden"><div class="absolute top-0 right-0 w-32 h-32 bg-guava-400/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div><div class="w-12 h-12 bg-guava-400/15 rounded-xl flex items-center justify-center mb-5"><iconify-icon icon="solar:chat-round-dots-linear" width="24" class="text-guava-400"></iconify-icon></div><h3 class="font-display text-xl font-semibold mb-4 text-white">Soft Skills</h3><div class="flex flex-wrap gap-2"><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Empathy</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Communication</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Collaboration</span><span class="tag px-3 py-1.5 rounded-full text-xs text-guava-300">Problem Solving</span></div></div>
             </div>
         </div>
     </section>
@@ -317,41 +309,8 @@
         </div>
     </section>
 
-    <!-- ILLUSTRATIONS -->
-    <section id="illustrations" class="py-24 md:py-32 bg-dark-400/50">
-        <div class="max-w-7xl mx-auto px-6 md:px-10">
-            <div class="text-center mb-12">
-                <div class="inline-flex items-center gap-2 mb-6"><span class="w-8 h-[2px] bg-guava-400"></span><span class="text-xs text-guava-400 uppercase tracking-widest font-semibold">Illustrations & Sketches</span><span class="w-8 h-[2px] bg-guava-400"></span></div>
-                <h2 class="font-display text-4xl md:text-5xl font-bold">Art <span class="text-guava-400">Gallery</span></h2>
-                <p class="text-gray-400 mt-4 max-w-lg mx-auto">Hand-drawn explorations — from mythical creatures to abstract forms. Click any piece to view it up close.</p>
-            </div>
-            <div class="flex flex-wrap justify-center gap-3 mb-12">
-                <button class="category-pill active tag px-5 py-2 rounded-full text-xs text-guava-300 uppercase tracking-wider font-semibold" data-filter="all">All Works</button>
-                <button class="category-pill tag px-5 py-2 rounded-full text-xs text-guava-300 uppercase tracking-wider font-semibold" data-filter="mythical">Mythical</button>
-                <button class="category-pill tag px-5 py-2 rounded-full text-xs text-guava-300 uppercase tracking-wider font-semibold" data-filter="dark">Dark Art</button>
-                <button class="category-pill tag px-5 py-2 rounded-full text-xs text-guava-300 uppercase tracking-wider font-semibold" data-filter="abstract">Abstract</button>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[220px] md:auto-rows-[260px]" id="illustrationGrid">
-                <div class="illustration-card row-span-2" data-category="abstract" onclick="openLightbox(0)"><img src="https://z-cdn-media.chatglm.cn/files/c50421d6-a326-429c-996d-0806bd4a1857.jpg?auth_key=1877085238-37e35810c0194e128f59dfc6fceba56f-0-11229b773ed4c0f47dc057c8800eff62" alt="Enigmatic Bust"><div class="card-label"><span class="text-sm text-white font-medium">Enigmatic Bust</span><span class="block text-xs text-guava-300 mt-0.5">Green tonal sculpture study</span></div></div>
-                <div class="illustration-card col-span-2" data-category="mythical" onclick="openLightbox(1)"><img src="https://z-cdn-media.chatglm.cn/files/af3e9957-a820-4f79-90c6-76a0d3704515.jpg?auth_key=1877085238-3c2bab6a07684ff8bc2abc43bfd9cd0b-0-f07871f6d2c21c69551b380986112b41" alt="Serpent's Gaze"><div class="card-label"><span class="text-sm text-white font-medium">Serpent's Gaze</span><span class="block text-xs text-guava-300 mt-0.5">Green dragon head study</span></div></div>
-                <div class="illustration-card" data-category="abstract" onclick="openLightbox(2)"><img src="https://z-cdn-media.chatglm.cn/files/89442f3b-55e3-4d5a-bf96-816b1e433e5f.jpg?auth_key=1877085238-3a6f7402db424b4e83b67cd052d4d899-0-94025ce00a572fc8f52ebf1f7a0111ad" alt="Metamorphosis"><div class="card-label"><span class="text-sm text-white font-medium">Metamorphosis</span><span class="block text-xs text-guava-300 mt-0.5">Abstract butterfly form</span></div></div>
-                <div class="illustration-card" data-category="dark" onclick="openLightbox(3)"><img src="https://z-cdn-media.chatglm.cn/files/1744b0f1-170b-403c-8248-e6020c5142a6.jpg?auth_key=1877085238-a8f68c6b3f8d405c8dc3c588f6d290e5-0-6becab2b09760d8bdb4b34b0f9a319f6" alt="Memento Mori"><div class="card-label"><span class="text-sm text-white font-medium">Memento Mori</span><span class="block text-xs text-guava-300 mt-0.5">Charcoal skull profile</span></div></div>
-                <div class="illustration-card col-span-2" data-category="dark" onclick="openLightbox(4)"><img src="https://z-cdn-media.chatglm.cn/files/5a5ec572-7bbc-403f-a798-5cf6050b423f.jpg?auth_key=1877085238-a1d1ed89d778448ead41ce3577257588-0-c8d5574201812fcef45b9615f259a6ae" alt="Crimson Apparition"><div class="card-label"><span class="text-sm text-white font-medium">Crimson Apparition</span><span class="block text-xs text-guava-300 mt-0.5">Red-toned gothic form</span></div></div>
-                <div class="illustration-card row-span-2" data-category="mythical" onclick="openLightbox(5)"><img src="https://z-cdn-media.chatglm.cn/files/9bd86b37-4b64-4481-80e7-6dba9fb212a4.jpg?auth_key=1877085238-3c907c3789354c3bafb97265fc5e6003-0-25767bd61c4855b1b54e2479c470b507" alt="Rose Wyrm"><div class="card-label"><span class="text-sm text-white font-medium">Rose Wyrm</span><span class="block text-xs text-guava-300 mt-0.5">Pink dragon head study</span></div></div>
-                <div class="illustration-card col-span-2 md:col-span-1" data-category="dark" onclick="openLightbox(6)"><img src="https://z-cdn-media.chatglm.cn/files/dab70ac1-9918-4871-9779-ae9f6fb4a99e.jpg?auth_key=1877085238-1a596dc7fda8427099dc7aa9d7c0da68-0-3bb318b899db8be95ae06d9d0d302f8c" alt="Venom"><div class="card-label"><span class="text-sm text-white font-medium">Venom</span><span class="block text-xs text-guava-300 mt-0.5">Serpent head close-up</span></div></div>
-            </div>
-            <div class="mt-16 text-center">
-                <div class="inline-block glass rounded-2xl px-10 py-8 max-w-2xl">
-                    <iconify-icon icon="solar:quotes-linear" width="32" class="text-guava-400/40 mb-3"></iconify-icon>
-                    <p class="font-hand text-2xl md:text-3xl text-guava-200 leading-relaxed">"Every line tells a story, every shadow hides a world."</p>
-                    <div class="w-12 h-[2px] bg-guava-400/30 mx-auto mt-4"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- DESIGN SHOWCASE -->
-    <section id="designs" class="py-24 md:py-32">
+    <section id="designs" class="py-24 md:py-32 bg-dark-400/50">
         <div class="max-w-7xl mx-auto px-6 md:px-10">
             <div class="text-center mb-16">
                 <div class="inline-flex items-center gap-2 mb-6"><span class="w-8 h-[2px] bg-guava-400"></span><span class="text-xs text-guava-400 uppercase tracking-widest font-semibold">Packaging Design</span><span class="w-8 h-[2px] bg-guava-400"></span></div>
@@ -385,20 +344,15 @@
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════════════════ -->
-    <!-- RESUME / CV SECTION — NEW -->
-    <!-- ═══════════════════════════════════════════════════════════════ -->
-    <section id="resume" class="py-24 md:py-32 bg-dark-400/50">
+    <!-- RESUME -->
+    <section id="resume" class="py-24 md:py-32">
         <div class="max-w-7xl mx-auto px-6 md:px-10">
             <div class="text-center mb-16">
                 <div class="inline-flex items-center gap-2 mb-6"><span class="w-8 h-[2px] bg-guava-400"></span><span class="text-xs text-guava-400 uppercase tracking-widest font-semibold">Resume</span><span class="w-8 h-[2px] bg-guava-400"></span></div>
                 <h2 class="font-display text-4xl md:text-5xl font-bold">My <span class="text-guava-400">CV</span> at a Glance</h2>
-                <p class="text-gray-400 mt-4 max-w-lg mx-auto">Click the resume to view it full-size. Here's everything you need to know.</p>
+                <p class="text-gray-400 mt-4 max-w-lg mx-auto">Click the resume to view it full-size.</p>
             </div>
-
             <div class="grid lg:grid-cols-5 gap-8 items-start">
-
-                <!-- LEFT: CV Image — 2 cols -->
                 <div class="lg:col-span-2">
                     <div class="cv-frame rounded-[1.25rem] overflow-hidden glass" onclick="openLightbox(0,'cv')">
                         <div class="aspect-[3/4] relative">
@@ -415,16 +369,10 @@
                         <span class="text-xs text-gray-500 uppercase tracking-wider">Product Experience Designer</span>
                     </div>
                 </div>
-
-                <!-- RIGHT: Info Cards — 3 cols -->
                 <div class="lg:col-span-3 space-y-5">
-
-                    <!-- Education -->
                     <div class="info-card glass rounded-2xl p-6">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 bg-guava-400/15 rounded-xl flex items-center justify-center shrink-0">
-                                <iconify-icon icon="solar:square-academic-cap-2-linear" width="20" class="text-guava-400"></iconify-icon>
-                            </div>
+                            <div class="w-10 h-10 bg-guava-400/15 rounded-xl flex items-center justify-center shrink-0"><iconify-icon icon="solar:square-academic-cap-2-linear" width="20" class="text-guava-400"></iconify-icon></div>
                             <h3 class="font-display text-lg font-semibold text-white">Education</h3>
                         </div>
                         <div class="timeline-dot pb-1">
@@ -433,35 +381,26 @@
                             <div class="text-gray-500 text-xs mt-1">2022 — 2026 (Expected)</div>
                         </div>
                     </div>
-
-                    <!-- Experience -->
                     <div class="info-card glass rounded-2xl p-6">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 bg-guava-400/15 rounded-xl flex items-center justify-center shrink-0">
-                                <iconify-icon icon="solar:case-round-linear" width="20" class="text-guava-400"></iconify-icon>
-                            </div>
+                            <div class="w-10 h-10 bg-guava-400/15 rounded-xl flex items-center justify-center shrink-0"><iconify-icon icon="solar:case-round-linear" width="20" class="text-guava-400"></iconify-icon></div>
                             <h3 class="font-display text-lg font-semibold text-white">Experience</h3>
                         </div>
                         <div class="space-y-5">
                             <div class="timeline-dot pb-2">
                                 <div class="text-white font-medium">Product Design Intern</div>
-                                <div class="text-guava-300 text-sm mt-0.5">Worked on end-to-end product design workflows, from research to prototyping and user testing.</div>
+                                <div class="text-guava-300 text-sm mt-0.5">End-to-end product design workflows — research, prototyping, user testing.</div>
                             </div>
                             <div class="timeline-dot">
                                 <div class="text-white font-medium">Freelance Packaging Designer</div>
-                                <div class="text-guava-300 text-sm mt-0.5">Delivered complete packaging design systems for brands — label, box, and visual identity.</div>
+                                <div class="text-guava-300 text-sm mt-0.5">Complete packaging systems — label, box, and visual identity for brands.</div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Skills + Certifications Row -->
                     <div class="grid md:grid-cols-2 gap-5">
-                        <!-- Skills -->
                         <div class="info-card glass rounded-2xl p-6">
                             <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 bg-guava-400/15 rounded-xl flex items-center justify-center shrink-0">
-                                    <iconify-icon icon="solar:star-linear" width="20" class="text-guava-400"></iconify-icon>
-                                </div>
+                                <div class="w-10 h-10 bg-guava-400/15 rounded-xl flex items-center justify-center shrink-0"><iconify-icon icon="solar:star-linear" width="20" class="text-guava-400"></iconify-icon></div>
                                 <h3 class="font-display text-lg font-semibold text-white">Key Skills</h3>
                             </div>
                             <div class="flex flex-wrap gap-2 cv-skill-tags">
@@ -475,29 +414,21 @@
                                 <span class="skill-tag-anim tag px-3 py-1.5 rounded-full text-xs text-guava-300">Communication</span>
                             </div>
                         </div>
-
-                        <!-- Certifications -->
                         <div class="info-card glass rounded-2xl p-6">
                             <div class="flex items-center gap-3 mb-4">
-                                <div class="w-10 h-10 bg-guava-400/15 rounded-xl flex items-center justify-center shrink-0">
-                                    <iconify-icon icon="solar:diploma-verified-linear" width="20" class="text-guava-400"></iconify-icon>
-                                </div>
+                                <div class="w-10 h-10 bg-guava-400/15 rounded-xl flex items-center justify-center shrink-0"><iconify-icon icon="solar:diploma-verified-linear" width="20" class="text-guava-400"></iconify-icon></div>
                                 <h3 class="font-display text-lg font-semibold text-white">Certifications</h3>
                             </div>
                             <div class="space-y-3">
                                 <div class="flex items-start gap-3">
-                                    <div class="w-6 h-6 rounded-md bg-guava-400/15 flex items-center justify-center shrink-0 mt-0.5">
-                                        <iconify-icon icon="solar:check-circle-linear" width="14" class="text-guava-400"></iconify-icon>
-                                    </div>
+                                    <div class="w-6 h-6 rounded-md bg-guava-400/15 flex items-center justify-center shrink-0 mt-0.5"><iconify-icon icon="solar:check-circle-linear" width="14" class="text-guava-400"></iconify-icon></div>
                                     <div>
                                         <div class="text-white text-sm font-medium">UI UX Design Certification</div>
                                         <div class="text-gray-500 text-xs">Professional credential</div>
                                     </div>
                                 </div>
                                 <div class="flex items-start gap-3">
-                                    <div class="w-6 h-6 rounded-md bg-guava-400/15 flex items-center justify-center shrink-0 mt-0.5">
-                                        <iconify-icon icon="solar:check-circle-linear" width="14" class="text-guava-400"></iconify-icon>
-                                    </div>
+                                    <div class="w-6 h-6 rounded-md bg-guava-400/15 flex items-center justify-center shrink-0 mt-0.5"><iconify-icon icon="solar:check-circle-linear" width="14" class="text-guava-400"></iconify-icon></div>
                                     <div>
                                         <div class="text-white text-sm font-medium">TESOL Certification</div>
                                         <div class="text-gray-500 text-xs">Teaching English to Speakers of Other Languages</div>
@@ -506,46 +437,78 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <!-- Tools Row -->
-                    <div class="info-card glass rounded-2xl p-6">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="w-10 h-10 bg-guava-400/15 rounded-xl flex items-center justify-center shrink-0">
-                                <iconify-icon icon="solar:settings-linear" width="20" class="text-guava-400"></iconify-icon>
-                            </div>
-                            <h3 class="font-display text-lg font-semibold text-white">Tools I Work With</h3>
-                        </div>
-                        <div class="flex flex-wrap gap-3 cv-tool-tags">
-                            <div class="skill-tag-anim flex items-center gap-2 px-4 py-2.5 rounded-xl glass border border-guava-400/10 hover:border-guava-400/30 transition-colors">
-                                <iconify-icon icon="simple-icons:figma" width="16" class="text-guava-300"></iconify-icon>
-                                <span class="text-sm text-white">Figma</span>
-                            </div>
-                            <div class="skill-tag-anim flex items-center gap-2 px-4 py-2.5 rounded-xl glass border border-guava-400/10 hover:border-guava-400/30 transition-colors">
-                                <iconify-icon icon="simple-icons:canva" width="16" class="text-guava-300"></iconify-icon>
-                                <span class="text-sm text-white">Canva</span>
-                            </div>
-                            <div class="skill-tag-anim flex items-center gap-2 px-4 py-2.5 rounded-xl glass border border-guava-400/10 hover:border-guava-400/30 transition-colors">
-                                <iconify-icon icon="simple-icons:adobexd" width="16" class="text-guava-300"></iconify-icon>
-                                <span class="text-sm text-white">Adobe XD</span>
-                            </div>
-                            <div class="skill-tag-anim flex items-center gap-2 px-4 py-2.5 rounded-xl glass border border-guava-400/10 hover:border-guava-400/30 transition-colors">
-                                <iconify-icon icon="simple-icons:adobephotoshop" width="16" class="text-guava-300"></iconify-icon>
-                                <span class="text-sm text-white">Photoshop</span>
-                            </div>
-                            <div class="skill-tag-anim flex items-center gap-2 px-4 py-2.5 rounded-xl glass border border-guava-400/10 hover:border-guava-400/30 transition-colors">
-                                <iconify-icon icon="simple-icons:adobeillustrator" width="16" class="text-guava-300"></iconify-icon>
-                                <span class="text-sm text-white">Illustrator</span>
-                            </div>
-                        </div>
-                    </div>
+    <!-- TOOLS I USE -->
+    <section id="tools" class="py-20 md:py-24 bg-dark-400/50">
+        <div class="max-w-5xl mx-auto px-6 md:px-10">
+            <div class="text-center mb-14">
+                <span class="text-xs text-guava-400 uppercase tracking-[0.25em] font-semibold">What I Work With</span>
+                <h2 class="font-display text-3xl md:text-4xl font-bold mt-3">Tools I <span class="text-guava-400">Use</span></h2>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 md:gap-10">
+                <div class="tool-item flex flex-col items-center gap-3">
+                    <div class="tool-icon-box w-16 h-16 md:w-20 md:h-20 rounded-2xl border border-guava-400/15 bg-guava-400/5 flex items-center justify-center"><iconify-icon icon="simple-icons:figma" width="28" class="text-guava-300"></iconify-icon></div>
+                    <span class="tool-name text-sm text-gray-400 font-medium">Figma</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-3">
+                    <div class="tool-icon-box w-16 h-16 md:w-20 md:h-20 rounded-2xl border border-guava-400/15 bg-guava-400/5 flex items-center justify-center"><iconify-icon icon="simple-icons:canva" width="28" class="text-guava-300"></iconify-icon></div>
+                    <span class="tool-name text-sm text-gray-400 font-medium">Canva</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-3">
+                    <div class="tool-icon-box w-16 h-16 md:w-20 md:h-20 rounded-2xl border border-guava-400/15 bg-guava-400/5 flex items-center justify-center"><iconify-icon icon="simple-icons:adobexd" width="28" class="text-guava-300"></iconify-icon></div>
+                    <span class="tool-name text-sm text-gray-400 font-medium">Adobe XD</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-3">
+                    <div class="tool-icon-box w-16 h-16 md:w-20 md:h-20 rounded-2xl border border-guava-400/15 bg-guava-400/5 flex items-center justify-center"><iconify-icon icon="simple-icons:adobephotoshop" width="28" class="text-guava-300"></iconify-icon></div>
+                    <span class="tool-name text-sm text-gray-400 font-medium">Photoshop</span>
+                </div>
+                <div class="tool-item flex flex-col items-center gap-3">
+                    <div class="tool-icon-box w-16 h-16 md:w-20 md:h-20 rounded-2xl border border-guava-400/15 bg-guava-400/5 flex items-center justify-center"><iconify-icon icon="simple-icons:adobeillustrator" width="28" class="text-guava-300"></iconify-icon></div>
+                    <span class="tool-name text-sm text-gray-400 font-medium">Illustrator</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- ILLUSTRATIONS -->
+    <section id="illustrations" class="py-24 md:py-32">
+        <div class="max-w-7xl mx-auto px-6 md:px-10">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 mb-6"><span class="w-8 h-[2px] bg-guava-400"></span><span class="text-xs text-guava-400 uppercase tracking-widest font-semibold">Illustrations & Sketches</span><span class="w-8 h-[2px] bg-guava-400"></span></div>
+                <h2 class="font-display text-4xl md:text-5xl font-bold">Art <span class="text-guava-400">Gallery</span></h2>
+                <p class="text-gray-400 mt-4 max-w-lg mx-auto">Hand-drawn explorations — from mythical creatures to abstract forms. Click any piece to view it up close.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button class="category-pill active tag px-5 py-2 rounded-full text-xs text-guava-300 uppercase tracking-wider font-semibold" data-filter="all">All Works</button>
+                <button class="category-pill tag px-5 py-2 rounded-full text-xs text-guava-300 uppercase tracking-wider font-semibold" data-filter="mythical">Mythical</button>
+                <button class="category-pill tag px-5 py-2 rounded-full text-xs text-guava-300 uppercase tracking-wider font-semibold" data-filter="dark">Dark Art</button>
+                <button class="category-pill tag px-5 py-2 rounded-full text-xs text-guava-300 uppercase tracking-wider font-semibold" data-filter="abstract">Abstract</button>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[220px] md:auto-rows-[260px]" id="illustrationGrid">
+                <div class="illustration-card row-span-2" data-category="abstract" onclick="openLightbox(0)"><img src="https://z-cdn-media.chatglm.cn/files/c50421d6-a326-429c-996d-0806bd4a1857.jpg?auth_key=1877085238-37e35810c0194e128f59dfc6fceba56f-0-11229b773ed4c0f47dc057c8800eff62" alt="Enigmatic Bust"><div class="card-label"><span class="text-sm text-white font-medium">Enigmatic Bust</span><span class="block text-xs text-guava-300 mt-0.5">Green tonal sculpture study</span></div></div>
+                <div class="illustration-card col-span-2" data-category="mythical" onclick="openLightbox(1)"><img src="https://z-cdn-media.chatglm.cn/files/af3e9957-a820-4f79-90c6-76a0d3704515.jpg?auth_key=1877085238-3c2bab6a07684ff8bc2abc43bfd9cd0b-0-f07871f6d2c21c69551b380986112b41" alt="Serpent's Gaze"><div class="card-label"><span class="text-sm text-white font-medium">Serpent's Gaze</span><span class="block text-xs text-guava-300 mt-0.5">Green dragon head study</span></div></div>
+                <div class="illustration-card" data-category="abstract" onclick="openLightbox(2)"><img src="https://z-cdn-media.chatglm.cn/files/89442f3b-55e3-4d5a-bf96-816b1e433e5f.jpg?auth_key=1877085238-3a6f7402db424b4e83b67cd052d4d899-0-94025ce00a572fc8f52ebf1f7a0111ad" alt="Metamorphosis"><div class="card-label"><span class="text-sm text-white font-medium">Metamorphosis</span><span class="block text-xs text-guava-300 mt-0.5">Abstract butterfly form</span></div></div>
+                <div class="illustration-card" data-category="dark" onclick="openLightbox(3)"><img src="https://z-cdn-media.chatglm.cn/files/1744b0f1-170b-403c-8248-e6020c5142a6.jpg?auth_key=1877085238-a8f68c6b3f8d405c8dc3c588f6d290e5-0-6becab2b09760d8bdb4b34b0f9a319f6" alt="Memento Mori"><div class="card-label"><span class="text-sm text-white font-medium">Memento Mori</span><span class="block text-xs text-guava-300 mt-0.5">Charcoal skull profile</span></div></div>
+                <div class="illustration-card col-span-2" data-category="dark" onclick="openLightbox(4)"><img src="https://z-cdn-media.chatglm.cn/files/5a5ec572-7bbc-403f-a798-5cf6050b423f.jpg?auth_key=1877085238-a1d1ed89d778448ead41ce3577257588-0-c8d5574201812fcef45b9615f259a6ae" alt="Crimson Apparition"><div class="card-label"><span class="text-sm text-white font-medium">Crimson Apparition</span><span class="block text-xs text-guava-300 mt-0.5">Red-toned gothic form</span></div></div>
+                <div class="illustration-card row-span-2" data-category="mythical" onclick="openLightbox(5)"><img src="https://z-cdn-media.chatglm.cn/files/9bd86b37-4b64-4481-80e7-6dba9fb212a4.jpg?auth_key=1877085238-3c907c3789354c3bafb97265fc5e6003-0-25767bd61c4855b1b54e2479c470b507" alt="Rose Wyrm"><div class="card-label"><span class="text-sm text-white font-medium">Rose Wyrm</span><span class="block text-xs text-guava-300 mt-0.5">Pink dragon head study</span></div></div>
+                <div class="illustration-card col-span-2 md:col-span-1" data-category="dark" onclick="openLightbox(6)"><img src="https://z-cdn-media.chatglm.cn/files/dab70ac1-9918-4871-9779-ae9f6fb4a99e.jpg?auth_key=1877085238-1a596dc7fda8427099dc7aa9d7c0da68-0-3bb318b899db8be95ae06d9d0d302f8c" alt="Venom"><div class="card-label"><span class="text-sm text-white font-medium">Venom</span><span class="block text-xs text-guava-300 mt-0.5">Serpent head close-up</span></div></div>
+            </div>
+            <div class="mt-16 text-center">
+                <div class="inline-block glass rounded-2xl px-10 py-8 max-w-2xl">
+                    <iconify-icon icon="solar:quotes-linear" width="32" class="text-guava-400/40 mb-3"></iconify-icon>
+                    <p class="font-hand text-2xl md:text-3xl text-guava-200 leading-relaxed">"Every line tells a story, every shadow hides a world."</p>
+                    <div class="w-12 h-[2px] bg-guava-400/30 mx-auto mt-4"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="py-24 md:py-32 relative overflow-hidden bg-dark-500">
+    <section id="contact" class="py-24 md:py-32 relative overflow-hidden bg-dark-400/50">
         <div class="absolute top-10 right-0 w-96 h-96 bg-guava-400/5 rounded-full blur-3xl"></div>
         <div class="absolute bottom-10 left-0 w-72 h-72 bg-guava-500/5 rounded-full blur-3xl"></div>
         <div class="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
@@ -583,7 +546,6 @@
         </div>
     </footer>
 
-    <!-- Back to Top -->
     <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-guava-400 text-dark-500 rounded-full flex items-center justify-center shadow-lg shadow-guava-400/30 hover:bg-guava-300 transition-all z-40 opacity-0 translate-y-4 pointer-events-none"><iconify-icon icon="solar:arrow-up-linear" width="20"></iconify-icon></button>
 
     <script>
@@ -606,15 +568,10 @@
         const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
         document.querySelectorAll('section:not(.visible)').forEach(s => obs.observe(s));
 
-        const cObs = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.querySelectorAll('.counter').forEach(c => { const t = parseInt(c.dataset.target); let cur = 0; const step = Math.ceil(t / 40); const timer = setInterval(() => { cur += step; if (cur >= t) { cur = t; clearInterval(timer); } c.textContent = cur + '+'; }, 50); }); }); }, { threshold: 0.5 });
-        document.querySelectorAll('#about').forEach(s => cObs.observe(s));
-
-        /* ── CV skill tags stagger animation ── */
         const cvObs = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const tags = entry.target.querySelectorAll('.skill-tag-anim');
-                    tags.forEach((tag, i) => { setTimeout(() => tag.classList.add('show'), i * 60); });
+                    entry.target.querySelectorAll('.skill-tag-anim').forEach((tag, i) => { setTimeout(() => tag.classList.add('show'), i * 60); });
                 }
             });
         }, { threshold: 0.3 });
@@ -624,7 +581,6 @@
         const cards = document.querySelectorAll('#illustrationGrid .illustration-card');
         pills.forEach(pill => pill.addEventListener('click', () => { pills.forEach(p => p.classList.remove('active')); pill.classList.add('active'); const f = pill.dataset.filter; cards.forEach(card => { if (f === 'all' || card.dataset.category === f) { card.style.display = ''; card.style.animation = 'scaleIn 0.5s ease forwards'; } else { card.style.display = 'none'; } }); }));
 
-        /* ── Lightbox ── */
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightboxImg');
         const lightboxCaption = document.getElementById('lightboxCaption');
@@ -662,7 +618,6 @@
             lightboxImg.src = item.src;
             lightboxCaption.textContent = item.title;
             lightboxSub.textContent = item.sub;
-            /* Hide prev/next arrows for single-image galleries */
             const single = galleries[gallery].length === 1;
             lbPrev.style.display = single ? 'none' : '';
             lbNext.style.display = single ? 'none' : '';
@@ -689,10 +644,7 @@
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
                 const targetEl = document.querySelector(targetId);
-                if (targetEl) {
-                    e.preventDefault();
-                    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (targetEl) { e.preventDefault(); targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
             });
         });
     </script>
